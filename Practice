@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Toggle</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f1f1f1;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: lightblue;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dark Mode Toggle</h1>
+    <button id="toggle-dark-mode">Enable Dark Mode</button>
+
+    <script>
+        $(document).ready(function () {
+            $('#toggle-dark-mode').click(function () {
+                $('body').toggleClass('dark-mode');
+                $(this).text($('body').hasClass('dark-mode') ? 'Disable Dark Mode' : 'Enable Dark Mode');
+            });
+        });
+    </script>
+</body>
+</html>
